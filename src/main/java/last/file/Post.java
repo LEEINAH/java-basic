@@ -1,21 +1,34 @@
-package txtBoard.post;
+package last.file;
 
 public class Post {
     private int postNum;
     private String title;
     private String body;
-    private String createtime;
+    private String createTiem;
     private int hit;
+    private int memberNum;
 
-    public Post(int postNum, String title, String body, String createtime, int hit) {
+    // 생성자 여러개 만들 수 있다. 단, 매개변수 모양이 달라야 함. => 생성자 오버로딩
+    public Post() {}
+
+    public Post(int postNum, String title, String body, String createTiem, int hit, int memberNum) {
         this.postNum = postNum;
         this.title = title;
         this.body = body;
-        this.createtime = createtime;
+        this.createTiem = createTiem;
         this.hit = hit;
+        this.memberNum = memberNum;
     }
 
-    public void views() {
+    public int getMemberNum() {
+        return memberNum;
+    }
+
+    public void setMemberNum(int memberNum) {
+        this.memberNum = memberNum;
+    }
+
+    public void increase() {
         this.hit++;
     }
 
@@ -43,12 +56,12 @@ public class Post {
         this.body = body;
     }
 
-    public String getCreatetime() {
-        return createtime;
+    public String getCreateTiem() {
+        return createTiem;
     }
 
-    public void setCreatetime(String createtime) {
-        this.createtime = createtime;
+    public void setCreateTiem(String createTiem) {
+        this.createTiem = createTiem;
     }
 
     public int getHit() {
